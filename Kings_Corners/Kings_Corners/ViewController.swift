@@ -60,6 +60,21 @@ class ViewController: UIViewController, UIDragInteractionDelegate {
         
         let dropInteraction = UIDropInteraction(delegate: self)
         cardGrid00.addInteraction(dropInteraction)
+        cardGrid01.addInteraction(dropInteraction)
+        cardGrid02.addInteraction(dropInteraction)
+        cardGrid03.addInteraction(dropInteraction)
+        cardGrid10.addInteraction(dropInteraction)
+        cardGrid11.addInteraction(dropInteraction)
+        cardGrid12.addInteraction(dropInteraction)
+        cardGrid13.addInteraction(dropInteraction)
+        cardGrid20.addInteraction(dropInteraction)
+        cardGrid21.addInteraction(dropInteraction)
+        cardGrid22.addInteraction(dropInteraction)
+        cardGrid23.addInteraction(dropInteraction)
+        cardGrid30.addInteraction(dropInteraction)
+        cardGrid31.addInteraction(dropInteraction)
+        cardGrid32.addInteraction(dropInteraction)
+        cardGrid33.addInteraction(dropInteraction)
         
     }
     
@@ -90,10 +105,10 @@ class ViewController: UIViewController, UIDragInteractionDelegate {
         print("Number of items in deck: ", deck.count)
     }
     
-
+    
     
     func dragInteraction(_ interaction: UIDragInteraction, itemsForBeginning session: UIDragSession) -> [UIDragItem] {
-
+        
         guard let image = cardImageView.image else { return []}
         //        guard let upCard = currentCard else { return []}
         let item = UIDragItem(itemProvider: NSItemProvider(object: image))
@@ -121,7 +136,26 @@ extension ViewController: UIDropInteractionDelegate {
         let operation: UIDropOperation
         if cardGrid00.frame.contains(dropLocation) {
             operation = session.localDragSession == nil ? .copy : .move
-        } else {
+        }
+//        } else if cardGrid01.frame.contains(dropLocation) {
+//            operation = session.localDragSession == nil ? .copy : .move
+//        } else if cardGrid02.frame.contains(dropLocation) {
+//            operation = session.localDragSession == nil ? .copy : .move
+//        } else if cardGrid03.frame.contains(dropLocation) {
+//            operation = session.localDragSession == nil ? .copy : .move
+//        } else if cardGrid10.frame.contains(dropLocation) {
+//            operation = session.localDragSession == nil ? .copy : .move
+//        } else if cardGrid11.frame.contains(dropLocation) {
+//            operation = session.localDragSession == nil ? .copy : .move
+//        } else if cardGrid12.frame.contains(dropLocation) {
+//            operation = session.localDragSession == nil ? .copy : .move
+//        } else if cardGrid13.frame.contains(dropLocation) {
+//            operation = session.localDragSession == nil ? .copy : .move
+//        } else if cardGrid30.frame.contains(dropLocation) {
+//            operation = session.localDragSession == nil ? .copy : .move
+//        } else if cardGrid21.frame.contains(dropLocation) {
+//            operation = session.localDragSession == nil ? .copy : .move
+        else {
             operation = .cancel
         }
         
